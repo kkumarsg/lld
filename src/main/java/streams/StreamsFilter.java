@@ -12,6 +12,20 @@ public class StreamsFilter {
 
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
 
+        Integer sumOfNumbers = numbers.stream()
+                .reduce(0, (sum, ele) -> {
+                    return sum + ele;
+                });
+
+        Integer max = numbers.stream()
+                .reduce(Integer.MIN_VALUE, (currMax, ele) -> {
+                    return Math.max(currMax, ele);
+                });
+
+        System.out.println("sumOfNumbers = " + sumOfNumbers);
+        System.out.println("max = " + max);
+
+
         List<Integer> evenNumbers = new ArrayList<>();
         // let's filter out odd numbers
         for(Integer number :numbers){
