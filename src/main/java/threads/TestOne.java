@@ -6,6 +6,6 @@ public class TestOne {
         Thread t = new Thread(helloWorldPrinter);
 
         System.out.println("Hi "+Thread.currentThread().getName());
-        t.run();
+        t.start();
     }
 }
