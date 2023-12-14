@@ -41,7 +41,7 @@ public class Sorter implements Callable<List<Integer>> {
         Sorter rightSorted  = new Sorter(rightArrayToSort, es);
         Future<List<Integer>> sortedRightArrayFuture = es.submit(rightSorted);
 
-        // you force the thread to stop and wait till both the parts are sorted.
+        // you force the thread to  wait till both the parts are sorted.
         List<Integer> sortedLeftArray = sortedLeftArrayFuture.get();
         List<Integer> sortedRightArray = sortedRightArrayFuture.get();
 
