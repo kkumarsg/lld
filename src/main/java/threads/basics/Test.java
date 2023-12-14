@@ -1,4 +1,6 @@
-package threads;
+package threads.basics;
+
+import java.util.concurrent.Callable;
 
 public class Test {
 
@@ -7,6 +9,7 @@ public class Test {
         int b = 10;
         System.out.println("Hello "+Thread.currentThread().getName());
         doSomething();
+
     }
 
     private static void doSomething() {

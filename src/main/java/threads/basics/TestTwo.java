@@ -1,4 +1,4 @@
-package threads;
+package threads.basics;
 
 public class TestTwo {
 
