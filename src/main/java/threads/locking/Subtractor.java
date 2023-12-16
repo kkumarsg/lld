@@ -17,9 +17,11 @@ public class Subtractor implements Callable<Void> {
     public Void call() throws Exception {
         for(int i=0; i<=50; i++){
             lock.lock();
-            System.out.println("Requesting lcok for adder "+i);
+            System.out.println("Requesting lcok for Subtractor "+i);
+            Thread.sleep(1000);
             val.value -= i;
-            System.out.println("Added "+i);
+            System.out.println("Subtractor "+i);
+            System.out.println("val.value = " + val.value);
             lock.unlock();
         }
         return null;

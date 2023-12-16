@@ -18,8 +18,10 @@ public class Adder implements Callable<Void> {
         for(int i=0; i<=50; i++){
             lock.lock();
             System.out.println("Requesting lcok for adder "+i);
+            Thread.sleep(1000);
             val.value += i;
             System.out.println("Added "+i);
+            System.out.println("val.value = " + val.value);
             lock.unlock();
         }
         return null;
