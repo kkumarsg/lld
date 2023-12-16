@@ -30,6 +30,10 @@ public class Game {
         return new Builder();
     }
 
+    public void printBoard() {
+        board.printBoard();
+    }
+
     // please revise builder class once.
     public static class Builder {
         private List<Player> players;

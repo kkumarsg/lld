@@ -43,4 +43,19 @@ public class Cell {
     public void setPlayer(Player player) {
         this.player = player;
     }
+
+    public void display() {
+
+        if (CellState.FILLED.equals(cellState)) {
+            System.out.print("| "+player.getSymbol()+" |");
+        }
+        else if(cellState.equals(CellState.EMPTY)){
+            System.out.print("| - |");
+        }
+
+
+
+
+
+    }
 }
