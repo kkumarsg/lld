@@ -30,6 +30,19 @@ public class App {
         winningStrategies.add(new DiagonalWinningStrategy());
 
         Game game = gameController.startGame(dimension, playerList, winningStrategies);
-        game.printBoard();
+
+        while(game.getGameState().equals(GameState.IN_PROG)){
+
+            game.printBoard();
+            gameController.makeMove(game);
+        }
+
+        // If I'm here, it means game is not in progress anymore
+        if(GameState.SUCCESS.equals(game.getGameState())){
+            System.out.println(game.getWinner().getName()+", Congrats! You won the Game :)");
+        }
+        if(GameState.DRAW.equals(game.getGameState())){
+            System.out.println("Match tied :| ");
+        }
     }
 }

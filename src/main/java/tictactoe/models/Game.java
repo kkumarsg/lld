@@ -24,6 +24,9 @@ public class Game {
         this.board = new Board(dimension);
         this.players = players;
         this.winningStrategies = winningStrategies;
+        this.gameState = GameState.IN_PROG;
+        this.nextPlayerIndex = 0;
+        this.moves = new ArrayList<>();
     }
 
     public static Builder getBuilder(){
@@ -32,6 +35,42 @@ public class Game {
 
     public void printBoard() {
         board.printBoard();
+    }
+
+    public void makeMove() {
+        Player player = players.get(nextPlayerIndex);
+        Cell cell = player.makeMove(board);
+
+        Move move = new Move(cell, player);
+        moves.add(move);
+
+        if(checkWinner(move, board)){
+            gameState = GameState.SUCCESS;
+            winner = player;
+            return ;
+        }
+
+        /*
+        checking for draw
+         */
+        if(moves.size()==board.getDimension()*board.getDimension()){
+            gameState = GameState.DRAW;
+            return ;
+        }
+
+        // update teh next player accordingly
+        nextPlayerIndex++;
+        nextPlayerIndex = nextPlayerIndex % players.size();
+
+    }
+
+    private boolean checkWinner(Move move, Board board) {
+        for(WinningStrategy winningStrategy: winningStrategies){
+            if(winningStrategy.checkWinner(board, move)){
+                return true;
+            }
+        }
+        return false;
     }
 
     // please revise builder class once.
