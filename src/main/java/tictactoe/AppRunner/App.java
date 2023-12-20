@@ -12,11 +12,13 @@ import tictactoe.winningstrategies.WinningStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) throws DuplicateSymbolException, PlayersCountMismatchException, MoreThanOneBotException {
         GameController gameController = new GameController();
+        Scanner scanner = new Scanner(System.in);
 
         int dimension = 3;
         List<Player> playerList = new ArrayList<>();
@@ -33,7 +35,22 @@ public class App {
 
         while(game.getGameState().equals(GameState.IN_PROG)){
 
+            /*
+                1. print board
+                2. do you want to undo
+                3. make move?
+             */
             game.printBoard();
+
+            System.out.println("Does anyone want to undo? (y/n)");
+
+            String undo = scanner.next();
+
+            if(undo.equalsIgnoreCase("y")){
+                gameController.undo(game);
+                continue;
+            }
+
             gameController.makeMove(game);
         }
 

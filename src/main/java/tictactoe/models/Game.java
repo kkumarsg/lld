@@ -73,6 +73,44 @@ public class Game {
         return false;
     }
 
+    public void undo() {
+        Move lastMove = removeLastMove();
+        if (lastMove == null) return;
+
+        updateTheCellAndUndoStrategies(lastMove);
+
+        updateNextPlayer();
+    }
+
+    private void updateTheCellAndUndoStrategies(Move lastMove) {
+        Cell cell = lastMove.getCell();
+        cell.setCellState(CellState.EMPTY);
+        cell.setPlayer(null);
+
+        for(WinningStrategy winningStrategy: winningStrategies){
+            winningStrategy.undo(board, lastMove);
+        }
+    }
+
+    private Move removeLastMove() {
+        if(moves.size()==0){
+            System.out.println("No moves to undo");
+            return null;
+        }
+        Move lastMove = moves.get(moves.size() - 1);
+        moves.remove(lastMove);
+        return lastMove;
+    }
+
+    private void updateNextPlayer() {
+        if(nextPlayerIndex!=0){
+            nextPlayerIndex--;
+        }
+        else{
+            nextPlayerIndex = players.size()-1;
+        }
+    }
+
     // please revise builder class once.
     public static class Builder {
         private List<Player> players;
