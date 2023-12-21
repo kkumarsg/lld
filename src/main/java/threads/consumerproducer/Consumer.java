@@ -13,6 +13,7 @@ public class Consumer implements Runnable{
         while(true){
             synchronized (store) {
                 if (store.getItems().size() > 0) {
+                    System.out.println("Consumed ");
                     store.getItems().remove(store.getItems().size() - 1);
                 }
             }

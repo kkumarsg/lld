@@ -13,6 +13,7 @@ public class Producer implements Runnable{
         while(true){
             synchronized (store) {
                 if (store.getItems().size() < store.getMaxSize()) {
+                    System.out.println("Produced ");
                     store.getItems().add(new Object());
                 }
             }
