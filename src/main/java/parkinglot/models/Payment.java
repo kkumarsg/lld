@@ -1,4 +1,4 @@
-package generics.parkinglot.models;
+package parkinglot.models;
 
 import java.time.LocalDateTime;
 

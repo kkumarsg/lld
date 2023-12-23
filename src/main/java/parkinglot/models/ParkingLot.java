@@ -1,7 +1,7 @@
-package generics.parkinglot.models;
+package parkinglot.models;
 
-import generics.parkinglot.strategies.BillingStrategy;
-import generics.parkinglot.strategies.ParkingPlaceAllotmentStrategy;
+import parkinglot.strategies.BillingStrategy;
+import parkinglot.strategies.ParkingPlaceAllotmentStrategy;
 
 import java.util.List;
 

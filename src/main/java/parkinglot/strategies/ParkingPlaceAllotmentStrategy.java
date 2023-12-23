@@ -1,4 +1,4 @@
-package generics.parkinglot.strategies;
+package parkinglot.strategies;
 
 public interface ParkingPlaceAllotmentStrategy {
 

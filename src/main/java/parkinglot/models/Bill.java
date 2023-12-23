@@ -1,6 +1,6 @@
-package generics.parkinglot.models;
+package parkinglot.models;
 
-import generics.parkinglot.strategies.BillingStrategy;
+import parkinglot.strategies.BillingStrategy;
 
 import java.time.LocalDateTime;
 import java.util.List;

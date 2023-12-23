@@ -1,4 +1,4 @@
-package generics.parkinglot.models;
+package parkinglot.models;
 
 public enum GateStatus {
 
