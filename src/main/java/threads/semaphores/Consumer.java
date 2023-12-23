@@ -22,6 +22,11 @@ public class Consumer implements Runnable {
                 throw new RuntimeException(e);
             }
             System.out.println("Consumed "+store.getItems().size());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             store.getItems().remove(store.getItems().size() - 1);
             producerSemaphore.release();
 

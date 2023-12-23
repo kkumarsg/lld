@@ -22,6 +22,11 @@ public class Producer implements Runnable {
                 throw new RuntimeException(e);
             }
             System.out.println("Produced "+store.getItems().size());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             store.getItems().add(new Object());
             consumerSemaphore.release();
         }

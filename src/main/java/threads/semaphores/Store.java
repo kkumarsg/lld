@@ -6,6 +6,7 @@ import java.util.List;
 public class Store {
 
     private int maxSize;
+    // better to use concurrent data structure
     private List<Object> items;
 
     public Store(int maxSize) {
