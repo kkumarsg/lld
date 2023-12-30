@@ -1,4 +1,4 @@
-package collections;
+package collections.batch1;
 
 public class DemoClass implements DemoInterface {
     @Override

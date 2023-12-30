@@ -1,4 +1,4 @@
-package collections;
+package collections.batch1;
 
 @FunctionalInterface
 public interface DemoInterface {

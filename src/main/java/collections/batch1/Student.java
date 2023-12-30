@@ -1,10 +1,19 @@
-package collections;
+package collections.batch1;
 
-import java.util.Comparator;
+public class Student implements Comparable<Student>{
 
-public class StudentSalaryComparator implements Comparator<Student> {
+    String name;
+    int psp;
+    int salary;
+
+    public Student(String name, int psp, int salary) {
+        this.name = name;
+        this.psp = psp;
+        this.salary = salary;
+    }
+
     @Override
-    public int compare(Student o1, Student o2) {
+    public int compareTo(Student other) {
         // you've two things to compare
         // 1. this class object, other student.
         /*
@@ -12,10 +21,10 @@ public class StudentSalaryComparator implements Comparator<Student> {
           2. to treat both 'this' and 'other' as 'this'<'other', return -1
           3. to treat both 'this' and 'other' as 'this'>'other', return 1
          */
-        if(o1.salary==(o2.salary)){
+        if(this.psp==(other.psp)){
             return 0;
         }
-        if(o1.salary<o2.salary){
+        if(this.psp<other.psp){
             return -1;
         }
         return 1;

@@ -1,11 +1,10 @@
-package collections;
+package collections.batch1;
 
 import java.util.Comparator;
 
-public class StudentNameComparator implements Comparator<Student> {
+public class StudentSalaryComparator implements Comparator<Student> {
     @Override
     public int compare(Student o1, Student o2) {
-
         // you've two things to compare
         // 1. this class object, other student.
         /*
@@ -13,10 +12,10 @@ public class StudentNameComparator implements Comparator<Student> {
           2. to treat both 'this' and 'other' as 'this'<'other', return -1
           3. to treat both 'this' and 'other' as 'this'>'other', return 1
          */
-        if(o1.name.length()==o2.name.length()){
+        if(o1.salary==(o2.salary)){
             return 0;
         }
-        if(o1.name.length()<o2.name.length()){
+        if(o1.salary<o2.salary){
             return -1;
         }
         return 1;

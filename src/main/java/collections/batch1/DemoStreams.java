@@ -1,4 +1,4 @@
-package collections;
+package collections.batch1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
