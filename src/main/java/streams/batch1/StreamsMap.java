@@ -1,4 +1,4 @@
-package streams;
+package streams.batch1;
 
 import java.util.ArrayList;
 import java.util.Arrays;

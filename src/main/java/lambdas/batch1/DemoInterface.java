@@ -1,4 +1,4 @@
-package lambdas;
+package lambdas.batch1;
 
 @FunctionalInterface
 public interface DemoInterface {

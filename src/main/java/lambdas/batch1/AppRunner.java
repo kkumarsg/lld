@@ -1,4 +1,4 @@
-package lambdas;
+package lambdas.batch1;
 
 import java.util.function.*;
 
