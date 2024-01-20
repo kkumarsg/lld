@@ -20,5 +20,12 @@ public class App {
         DatabaseConnectionV4 db6 = DatabaseConnectionV4.getInstance();
         System.out.println("Hello");
 
+        DatabaseConnectionV7 instance1 = DatabaseConnectionV7.getInstance();
+        DatabaseConnectionV7 instace2 = DatabaseConnectionV7.getInstance();
+
+        DatabaseConnectionV7.ChildClass childClass = new DatabaseConnectionV7.ChildClass();
+
+
+
     }
 }
