@@ -23,8 +23,6 @@ public class App {
         DatabaseConnectionV7 instance1 = DatabaseConnectionV7.getInstance();
         DatabaseConnectionV7 instace2 = DatabaseConnectionV7.getInstance();
 
-        DatabaseConnectionV7.ChildClass childClass = new DatabaseConnectionV7.ChildClass();
-
 
 
     }
