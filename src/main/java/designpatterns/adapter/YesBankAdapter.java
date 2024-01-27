@@ -4,7 +4,6 @@ public class YesBankAdapter implements BankApi{
 
 
 
-
     @Override
     public double getBalance() {
 
