@@ -5,6 +5,8 @@ import java.util.Map;
 public class Student {
 
     private String name;
+
+    private String compnay;
     private int age;
     private double psp;
     private String universityName;
